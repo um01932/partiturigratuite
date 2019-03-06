@@ -7,8 +7,7 @@
              google_ad_client: "ca-pub-9458369256335837",
              enable_page_level_ads: true
          });
-      </script>
-      
+      </script>	
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135118312-1"></script>
       <script>
@@ -139,6 +138,8 @@ ZarzaricaZarzarea: {Name:'Zarzarica, Zarzarea', DriveURL:'https://drive.google.c
 		 document.getElementById("nameP1").innerHTML=data[key].Name;
 		 document.getElementById("nameP2").innerHTML=data[key].Name;
 		 document.title=data[key].Name;
+		 document.getElementById("driveFrame").src=data[key].DriveURL;
+		 document.getElementById("youtubeFrame").src=data[key].YoutubeURL;
 		 document.getElementById("svgFrame").src=data[key].SvgFile;
 		}
 	</script>
@@ -162,14 +163,14 @@ ZarzaricaZarzarea: {Name:'Zarzarica, Zarzarea', DriveURL:'https://drive.google.c
             <h4><b>Document</b></h4>
             </p>					
 			<p><small>Puteti descarca si printa acest document in format PDF.</small></p>		
-			<p>Va fi adaugat in curand</p>	
+            <iframe id="driveFrame" src="https://drive.google.com/file/d/{1}/preview" width="560" height="480"></iframe>
          </div>
          <div class="col-xs-4">
             <p>
             <h4><b>Video</b></h4>
             </p>
 			<p><small>Puteti vizualiza acest video si pe Youtube.</small></p>		
-			<p>Va fi adaugat in curand</p>		
+            <iframe id="youtubeFrame" width="560" height="315" src="https://www.youtube.com/embed/{2}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
          </div>
       </div>
       <div class="page-footer font-small teal pt-4">
@@ -212,10 +213,52 @@ ZarzaricaZarzarea: {Name:'Zarzarica, Zarzarea', DriveURL:'https://drive.google.c
             </div>
          </div>
          <div>
-         </div>
-         <div class="footer-copyright text-center py-3"> <i>Echipa PartituriGratuite.com</i>
-         </div>
+         </div>        
       </div>
+	  <footer class="page-footer font-small blue pt-4">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase"><b>Note de subsol</b></h5>
+          <p>In aceasta sectiune regasiti link-uri catre pagini ce contin informatii suplimentare referitoare la acest site.</p>
+
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="Disclaimer.html">Disclaimer</a>
+              </li>
+              <li>
+                <a href="Contact.html">Contact</a>
+              </li>
+              <li>
+                <a href="Aboutus.html">Despre noi</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="Youtube.html">Youtube</a>
+              </li>
+              <li>
+                <a href="Privacy.html">Politica de confidentialitate</a>
+              </li>
+              <li>
+                <a href="Social.html">Retele de socializare</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3"> 2019: Echipa partiturigratuite.com</a>
+    </div>
+  </footer>
    </body>
 </html>
 
