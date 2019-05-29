@@ -28,7 +28,19 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-   </head>
+	  <style>         
+         /* Float four columns side by side */
+         .containers {        
+				width: 560px!important;
+				height: 315px;
+         }
+		@media screen and (max-width: 768px) {
+			.containers {
+				width: 100%!important;
+			}
+		}
+      </style>
+</head>
    <body>
    <script type="text/javascript">
 		var data=
@@ -175,7 +187,7 @@ ZarzaricaZarzarea: {Name:'Zarzarica, Zarzarea', DriveURL:'https://drive.google.c
 		 document.title=data[key].Name;
 		 document.getElementById("driveFrame").src=data[key].DriveURL;
 		 document.getElementById("youtubeFrame").src=data[key].YoutubeURL;
-		 document.getElementById("svgFrame").src=data[key].SvgFile;
+		 //sdocument.querySelector("image").setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', data[key].SvgFile);
 		}
 	</script>
       <div class="jumbotron">
@@ -186,26 +198,22 @@ ZarzaricaZarzarea: {Name:'Zarzarica, Zarzarea', DriveURL:'https://drive.google.c
          <p>Apasati <a href="index.html"> aici </a> pentru a reveni la pagina principala.</p>
       </div>
       <div class="row d-flex justify-content-center">
-         <div class="col-xs-4">
-            <p>
-            <h4><b>Poza</b></h4>
-            </p>	
-			<p><small>Puteti deschide poza in browserul dumneavoastra apasand click-dreapta: 'View Image'.</small></p>		
-            <img id="svgFrame" src="https://drive.google.com/file/d/{1}/preview" width="560" height="480" />
-         </div>
-         <div class="col-xs-4">
-            <p>
-            <h4><b>Document</b></h4>
-            </p>					
-			<p><small>Puteti descarca si printa acest document in format PDF.</small></p>		
-            <iframe id="driveFrame" src="https://drive.google.com/file/d/{1}/preview" width="560" height="480"></iframe>
-         </div>
-         <div class="col-xs-4">
-            <p>
+         <div class="col-md-4">
             <h4><b>Video</b></h4>
-            </p>
 			<p><small>Puteti vizualiza acest video si pe Youtube.</small></p>		
-            <iframe id="youtubeFrame" width="560" height="315" src="https://www.youtube.com/embed/{2}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="containers" id="youtubeFrame"  src="https://www.youtube.com/embed/{2}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         </div>
+        <!-- <div class="col-md-4">
+            <h4><b>Poza</b></h4>
+			<p><small>Puteti deschide poza in browserul dumneavoastra apasand click-dreapta: 'View Image'.</small></p>	
+			<svg class="containers" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >       
+			  <image id="svgFrame" class="containers" xlink:href="https://drive.google.com/file/d/{1}/preview" ></image>
+			</svg>			
+         </div>-->
+         <div class="col-md-4">
+            <h4><b>Document</b></h4>
+			<p><small>Puteti descarca si printa acest document in format PDF.</small></p>		
+            <iframe class="containers" id="driveFrame" src="https://drive.google.com/file/d/{1}/preview"></iframe>
          </div>
       </div>
       <div class="page-footer font-small teal pt-4">
